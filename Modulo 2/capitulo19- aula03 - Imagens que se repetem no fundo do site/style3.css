@@ -1,0 +1,38 @@
+div.bloco{
+background-image: url("img/wallpaper003.jpg");
+
+height: 200px;
+border: 1px solid black;
+margin: 10px;
+border-radius: 20px;
+
+}
+
+div#q1{
+    background-position:  left top;
+    
+}
+
+div#q2{
+    background-position: left center;
+}
+
+div#q3{
+    background-position: right bottom;
+}
+
+div#q4{
+    background-position: center center;
+}
+
+
+
+/*div#q1 posição da imagem orientada a começar a partir do canto superior esquerdo 
+
+div#q2 posição da imagem orientada a iniciar do meio á esquerda, porem começando do centro (vai começar a esquerda da imagem, porém ao invés de ter refencia top igual na div#q1, tem referencia do meio.)
+
+/*div#q3 posição da imagem orientada a começar a partir do canto superior direito 
+
+/*div#q4 posição da imagem orientada a começar a partir do meio tanto do eixo x quanto do eixo y
+
+*/
