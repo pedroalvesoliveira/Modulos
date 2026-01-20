@@ -9,17 +9,17 @@ body {
     margin-bottom: 16px;
     justify-content: center;
     /* align-items: stretch; */
-      align-content: space-evenly;
+    align-content: space-evenly;
     flex-wrap: wrap;
-  
-    flex-direction:column;
+
+    flex-direction: column;
 
 }
 
 .flexbox div {
     border: 2px solid orange;
-    width: 200px; 
-    height: 200px; 
+    width: 200px;
+    height: 200px;
     flex-basis: 150px;
     margin: 15px;
 }
