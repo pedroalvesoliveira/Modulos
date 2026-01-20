@@ -3,19 +3,25 @@ body {
 }
 
 .flexbox {
-    height: 250px;
+    height: 500px;
     border: 3px solid red;
     display: flex;
     margin-bottom: 16px;
-    /* justify-content: center; */
-    justify-content: space-evenly;
+    justify-content: center;
+    /* align-items: stretch; */
+      align-content: space-evenly;
+    flex-wrap: wrap;
+  
+    flex-direction:column;
 
 }
 
 .flexbox div {
     border: 2px solid orange;
-    width: 100px;
-    /* margin: 15px; */
+    width: 200px; 
+    height: 200px; 
+    flex-basis: 150px;
+    margin: 15px;
 }
 
 /* As divs que estão dentro do flexbox possuem uma borda, uma largura e uma margem
@@ -57,11 +63,92 @@ Diferença principal: Diferente de outros métodos, ele não privilegia o meio. 
 
 ALIGN ITENS
  ---------------------------------------------------------------------------- 
+align-items: flex-end; no CSS Flexbox serve para empurrar todos os itens dentro de um contêiner para o final do eixo transversal (vertical, por padrão). 
+
+Imagine uma caixa (o pai) e blocos dentro dela (os filhos). Se a caixa é alta, o flex-end faz com que os blocos fiquem todos encostados na borda inferior, alinhados pela base. 
+
+Onde aplicar: No contêiner pai (display: flex).
+O que faz: Alinha os filhos na parte inferior do contêiner.
+Quando usar: Quando você tem itens de alturas diferentes, ou quer "jogar" os itens para baixo sem usar posicionamento absoluto.
+Eixo Principal: Por padrão (row), ele alinha verticalmente. Se usar flex-direction: column, ele alinha horizontalmente à direita. 
+------------------------------------------------------------------------------
+
+align-items: center no CSS é a forma mais fácil de alinhar elementos verticalmente no centro dentro de um contêiner (como uma div ou header), desde que você esteja usando Flexbox (display: flex). 
+A Definição Simples
+Imagine que você tem um contêiner pai e itens dentro dele (filhos). O align-items: center diz: "Peguem todos os itens filhos e coloquem-nos exatamente no meio do contêiner, na vertical". 
+
+------------------------------------------------------------------------------
+
+align-items: flex-start no CSS Flexbox é a forma mais simples de dizer: "cole todos os itens no início (topo) do contêiner". 
+Aqui está a explicação simplificada e visual:
+Imagine que o seu contêiner é uma caixa e os elementos dentro dela (filhos) são objetos.
+Comportamento: align-items: flex-start; alinha os itens no início do eixo perpendicular (vertical por padrão).
+Resultado: Os itens se alinham ao topo, ignorando o tamanho do maior item e usando apenas a altura necessária para seu próprio conteúdo. 
+
+------------------------------------------------------------------------------
+O align-items: stretch no CSS Flexbox é a definição padrão ("default") que faz com que os elementos filhos (itens) se estiquem para preencher todo o tamanho do contêiner pai no eixo transversal. 
+A Definição Simples
+Se o contêiner flex tem uma altura de 300px, e você não definiu altura nos itens filhos, o stretch faz com que todos eles fiquem com 300px de altura automaticamente. 
+Pense assim: É como "esticar" uma goma de mascar para ela ocupar todo o espaço vertical disponível. 
+
  Trabalha para alinhar e distribuir os flex itens no eixo Y (eixo vertical).
- O align-items é uma propriedade CSS do Flexbox usada para alinhar os itens filhos (elementos dentro de um contêiner) ao longo do eixo secundário. 
-Definição simples: Pense no align-items como a forma de decidir se seus elementos "filhos" vão ficar no topo, no meio ou na base de um contêiner, quando ele usa display: flex.
-Onde aplicar: Deve ser aplicado no elemento Pai (contêiner).
-Padrão: Geralmente, se a direção for linha (row), o align-items alinha na vertical (verticalmente). 
+O align-items é uma propriedade CSS do Flexbox usada para alinhar os itens filhos(elementos dentro de um contêiner) ao longo do eixo vertical. 
+
+ POR PADRÃO o align items ja vem com o valor STRECHED, ou seja, esticado verticalmente, porém, assim como o justify-content, temos inúmeras alterações dentro desta declaração.
+
+Pense no align-items como a forma de decidir se seus elementos "filhos" vão ficar no topo, no meio ou na base de um contêiner, quando ele usa display: flex.
+
+ONDE APLICAR: Deve ser aplicado no elemento Pai (contêiner).
+
+------------------------------------------------------------------------------
+FLEX-WRAP
+
+flex-wrap: propriedade que define se os itens dentro de um contêiner flexível devem se espremer em uma única linha ou quebrar para novas linhas (criar uma nova linha) caso não haja espaço suficiente.
+
+Pense nele como o "quebra de linha" do Flexbox. Sem ele, os itens tentam 
+ficar lado a lado para sempre, mesmo que estourem o tamanho da tela. 
+
+Por que aprender?
+O comportamento padrão (nowrap) faz com que os itens diminuam de tamanho ou saiam da tela. O flex-wrap: wrap; é fundamental para criar layouts responsivos que se adaptam a celulares, tablets e desktop. 
+
+Os Principais Valores
+
+-flex-wrap: nowrap; (Padrão)
+O que faz: Todos os itens ficam em uma linha só. Se não couber, eles diminuem ou transbordam.
+-flex-wrap: wrap;
+O que faz: Quebra os itens para a linha de baixo se não houver espaço horizontal.
+-flex-wrap: wrap-reverse;
+O que faz: Quebra os itens para baixo, mas inverte a ordem das linhas. 
+
+------------------------------------------------------------------------------
+ALIGN-CONTENT
+------------------------------------------------------------------------------
+
+O align-content no CSS é a propriedade que define como as linhas inteiras de um contêiner flexível (Flexbox) se alinham entre si quando há espaço extra no eixo transversal (vertical, por padrão). 
+Pense nele como o justify-content, mas aplicado às linhas e não aos itens individuais. 
+
+"O Organizador de Linhas"
+O que ele faz: Ele gerencia o espaço entre as linhas de itens flexíveis quando você tem flex-wrap: wrap (itens quebrados em várias linhas).
+Quando usar: Apenas quando houver mais de uma linha de conteúdo.
+Eixo de atuação: Eixo transversal (vertical se flex-direction: row). 
+
+------------------------------------------------------------------------------
+FLEX-DIRECTION
+
+flex-direction do CSS define para onde os itens dentro de um contêiner (pai) vão apontar. 
+Ela define o "eixo principal" do layout, ou seja, se os elementos devem ficar alinhados horizontalmente (como uma linha) ou verticalmente (como uma coluna).
+
+Ela é aplicada no elemento pai que possui display: flex. 
+
+Os 4 Valores Principais: 
+
+row (Padrão): Alinha os itens horizontalmente, da esquerda para a direita (->).
+column: Alinha os itens verticalmente, de cima para baixo. 
+row-reverse: Alinha horizontalmente, mas da direita para a esquerda, invertendo a ordem. 
+column-reverse: Alinha verticalmente, mas de baixo para cima, invertendo a ordem.
+
+
+
 
 
 
