@@ -1,0 +1,53 @@
+body {
+    margin-bottom: 500px;
+}
+
+.flexbox {
+    height: 250px;
+    border: 3px solid red;
+    display: flex;
+    margin-bottom: 16px;
+    /* justify-content: center; */
+    justify-content: space-evenly;
+}
+
+.flexbox div {
+    border: 2px solid orange;
+    width: 100px;
+    /* margin: 15px; */
+}
+
+/* As divs que estão dentro do flexbox possuem uma borda, uma largura e uma margem
+
+ESSE É O COMPORTAMENTO DO DISPLAY FLEX POR PADRÃO
+
+Ao adicionar-mos o display:flex dentro da div pai, a declaração vai automáticamente transformar o container (que por padrão vem uma div embaixo da outra), em um Flex Container, e a partir dai ele vai alinhar e distribuir os seus filhos diretos (as 4 divs numeradas de 1 até 4).
+
+Ao adicionarmos essa declaração de display flex, o container passa a ser chamado de flex container e as divs passam a ser chamadas de FLEX ITEMS.
+
+O padrão do display:flex é deixar alinhado os flex itens, mesmo que nao caibam na janela, ela vai se adaptando, porém, ele respeita as especificações que foram feitas em flexbox.div, mantendo as características intáctas, achatando o conteúdo para que ele caiba no flex conteiner.
+Ao esticar a tela para o lado, aumentando ela de tamanho, percebemos que ele trava os cards (flex itens) em 150px, respeitando também o valor que foi colocado na declaração flexbox.div, (e assim fazendo sobrar um espaço enorme em branco dentro do container).
+
+Resumidamente: ele coloca tudo lado a lado e estica ou achata o flex item na vertical.
+*/
+
+/* A PARTIR DAI, A MANEIRA QUE QUISERMOS ALINHAR OS FLEX ITENS, DEVE SER AJUSTADO NO SELETOR DO ELEMENTO PAI, E NÃO NO SELETOR DOS FLEX ITENS*/
+
+/* justify-content: center - Para distribuir ou alinhar na horizontal, no eixo X (por equanto usaremos como eixo X apenas, mas isso vai mudar).
+
+O space-between é um valor da propriedade CSS justify-content (usada no Flexbox) que distribui itens uniformemente em uma linha ou coluna, colocando o primeiro item no início, o último no final e espaçamento igual entre os elementos. 
+Imagine que você tem 3 caixas dentro de um contêiner:
+A primeira caixa vai grudar na borda esquerda (início).
+A última caixa vai grudar na borda direita (final).
+O espaço que sobrar no meio será dividido igualmente entre as caixas restantes. 
+Regra de ouro: Não há espaço nas extremidades (bordas externas), apenas entre os itens, porém da pra colocar espaço usando a declaração margin dntro do seletor flex container 
+
+justify-content: space-around no CSS (usado com Flexbox) é uma forma de distribuir elementos dentro de um contêiner, colocando espaços iguais ao redor de cada item. 
+Imagine que você tem três caixas em uma linha. O space-around vai garantir que:
+O espaço antes da primeira caixa e depois da última seja de um tamanho "X".
+O espaço entre as caixas seja duas vezes maior ("2X"). 
+
+space-evenly é uma propriedade do CSS Flexbox (usada com justify-content) que distribui os itens dentro de um contêiner garantindo que todo o espaço em branco seja exatamente igual. 
+Diferença principal: Diferente de outros métodos, ele não privilegia o meio. As bordas (início e fim) terão a mesma distância que o espaço entre os itens. 
+
+*/
