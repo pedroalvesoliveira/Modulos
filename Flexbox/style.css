@@ -9,6 +9,7 @@ body {
     margin-bottom: 16px;
     /* justify-content: center; */
     justify-content: space-evenly;
+
 }
 
 .flexbox div {
@@ -31,7 +32,10 @@ Ao esticar a tela para o lado, aumentando ela de tamanho, percebemos que ele tra
 Resumidamente: ele coloca tudo lado a lado e estica ou achata o flex item na vertical.
 */
 
-/* A PARTIR DAI, A MANEIRA QUE QUISERMOS ALINHAR OS FLEX ITENS, DEVE SER AJUSTADO NO SELETOR DO ELEMENTO PAI, E NÃO NO SELETOR DOS FLEX ITENS*/
+
+/* A PARTIR DAI, A MANEIRA QUE QUISERMOS ALINHAR OS FLEX ITENS, DEVE SER AJUSTADO NO SELETOR DO ELEMENTO PAI, E NÃO NO SELETOR DOS FLEX ITENS
+ ----------------------------------------------------------------------------
+*/
 
 /* justify-content: center - Para distribuir ou alinhar na horizontal, no eixo X (por equanto usaremos como eixo X apenas, mas isso vai mudar).
 
@@ -49,5 +53,18 @@ O espaço entre as caixas seja duas vezes maior ("2X").
 
 space-evenly é uma propriedade do CSS Flexbox (usada com justify-content) que distribui os itens dentro de um contêiner garantindo que todo o espaço em branco seja exatamente igual. 
 Diferença principal: Diferente de outros métodos, ele não privilegia o meio. As bordas (início e fim) terão a mesma distância que o espaço entre os itens. 
+
+
+ALIGN ITENS
+ ---------------------------------------------------------------------------- 
+ Trabalha para alinhar e distribuir os flex itens no eixo Y (eixo vertical).
+ O align-items é uma propriedade CSS do Flexbox usada para alinhar os itens filhos (elementos dentro de um contêiner) ao longo do eixo secundário. 
+Definição simples: Pense no align-items como a forma de decidir se seus elementos "filhos" vão ficar no topo, no meio ou na base de um contêiner, quando ele usa display: flex.
+Onde aplicar: Deve ser aplicado no elemento Pai (contêiner).
+Padrão: Geralmente, se a direção for linha (row), o align-items alinha na vertical (verticalmente). 
+
+
+
+
 
 */
