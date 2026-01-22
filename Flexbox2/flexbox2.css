@@ -31,7 +31,7 @@ a {
     padding: 1rem 1.6rem;
 
     background: var(--button-bg-color);
-    border-radius: 8rem;
+    border-radius: .8rem;
     color: var(--button-text-color);
 }
 
@@ -62,7 +62,9 @@ ul{
     display: flex;
     list-style: none;
     gap: 3rem;  /* para eu colocar espaço entre os elementos do display flex, basta usar propriedade gap. Neste caso foi colocado o valor de 3rem(30px).*/
+    
    align-items: center;
+   /* para alinhar os itens*/
 }
 
 /* <!-- BOX MODEL
